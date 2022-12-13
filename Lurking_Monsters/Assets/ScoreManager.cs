@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
     public Sprite Key;
 
     int totalBullets = 12;
-    int totalBears = 3;
+    int totalBears = 5;
     int collectedKeys = 0;
 
     void Start()
@@ -46,6 +46,11 @@ public class ScoreManager : MonoBehaviour
     public void hpDown()
     {
         totalBears--;
+    }
+
+    public void hpUp()
+    {
+        totalBears++;
     }
 
     public void keyUP()

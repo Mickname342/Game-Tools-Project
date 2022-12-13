@@ -12,12 +12,14 @@ public class PlayerMovement : MonoBehaviour
     public SpriteRenderer charachter;
     public Color colorToTurnTo = Color.white;
     public UnityEvent hpLost;
+    public UnityEvent hpGained;
+    public AudioSource hit;
 
     [SerializeField] float speed = 5f;
 
     float mx;
     float my;
-    float hp = 3;
+    public float hp = 5;
     private Vector2 playerDirection;
 
     void Start()
@@ -72,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if(collision.collider.gameObject.layer == 0)
         {
+            hit.Play();
             hp--;
             collider2.enabled = false;
             charachter.color = colorToTurnTo;
@@ -86,5 +89,18 @@ public class PlayerMovement : MonoBehaviour
     {
         collider2.enabled = true;
         charachter.color = Color.white;
+    }
+
+    public void hpUp()
+    {
+        if (hp < 5)
+        {
+            hp++;
+            hpGained.Invoke();
+        }
+        else
+        {
+            hp = 5;
+        }
     }
 }

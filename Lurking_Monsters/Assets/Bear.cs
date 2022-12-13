@@ -7,6 +7,8 @@ using Pathfinding;
 public class Bear : MonoBehaviour
 {
     public int hp = 3;
+    public int maxHp = 3;
+    public Transform hpBar;
     public UnityEvent activate;
     public UnityEvent dead;
     public AudioSource roar;
@@ -19,10 +21,12 @@ public class Bear : MonoBehaviour
     private void Start()
     {
         random = Random.Range(0,10);
+        hpBar.localScale = new Vector2(maxHp, 1);
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
         hp--; 
+        hpBar.localScale = new Vector2(hpBar.localScale.x - 1,1);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

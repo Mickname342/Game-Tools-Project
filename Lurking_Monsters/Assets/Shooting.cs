@@ -24,19 +24,20 @@ public class Shooting : MonoBehaviour
         {
             Shoot();
         }
-        /*if (Input.GetKey(KeyCode.Mouse1) && (Time.time > timeLastShot + delayBetweenShots) && bullets > 0)
+        /*if (Input.GetKey(KeyCode.Mouse0) && (Time.time > timeLastShot + delayBetweenShots) && bullets > 0)
         {
             timeLastShot = Time.time;
+            Shoot();
             //for(int i = 0; i< 5; i++)
             //{
-                //if (Time.time > timeLastShot + 0.05f)
-                //{
-                    Shoot();
-                //}
-                    
+            //if (Time.time > timeLastShot + 0.05f)
+            //{
+
             //}
-            
-            
+
+            //}
+
+
             //Invoke("wait", 1f);
         }*/
     }
